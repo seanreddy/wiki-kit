@@ -1,0 +1,7 @@
+# Action items for the owner. status: suggested | accepted | dismissed.
+# Anyone may ADD `suggested`; only the owner flips a status.
+welcome:
+  status: suggested
+  title: "Read the About page, then delete the Example domain"
+  body: "The Example page exists to show the diagram repertoire; remove prose/2-example, packs/example_pack.py and tests/test_example_pack.py once you have copied what you need."
+  source: "kit"

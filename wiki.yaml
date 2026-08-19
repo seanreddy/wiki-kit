@@ -1,0 +1,22 @@
+# Site configuration — every project fact the engine needs lives here.
+# Paths are relative to this file's directory.
+site:
+  title: "Wiki"
+  lede: "Every domain of the project, generated and gated"
+paths:
+  prose: prose
+  packs_registry: packs/registry.py
+  decisions: decisions
+  images: images
+  out: site
+  tokens: tokens.yaml
+  glossary: glossary.yaml
+  review_state: review_state.yaml
+  inbox: inbox.yaml
+  config_registry: config_registry.yaml
+  code_map: code_map.yaml
+fonts: {}
+ledes:
+  min: 6
+  max: 8
+  require_h2: true

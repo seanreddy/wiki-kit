@@ -1,0 +1,16 @@
+# Canonical vocabulary. term -> definition, scope, terms to avoid, see-also, and a
+# `home` (page.html#anchor) the auto-linker sends first mentions to.
+lede:
+  definition: "The six-to-eight word phrase that opens every page and every section."
+  scope: "wiki"
+  avoid: ["tagline", "subtitle"]
+  home: "about.html#h-00-about-how-it-is-built"
+token:
+  definition: "A named design value in tokens.yaml — an ink, a role, a size, a duration."
+  scope: "design"
+  avoid: ["variable", "constant"]
+  home: "design-system.html#s-ds-inks"
+renderer:
+  definition: "A function that returns one generated section's HTML or SVG."
+  scope: "wiki"
+  home: "example.html#h-00-example-how-a-diagram-gets-onto-a-page"

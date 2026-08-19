@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Glossary</title>
+<link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+<div class="wrap">
+<aside class="side"><nav class="rail"><div class="rail-title">Wiki</div><a href="index.html">Hub</a><a href="design-system.html">Design System</a><a href="example.html">Example</a><a href="glossary.html" aria-current="page">Glossary</a><a href="ideas.html">Ideas</a><a href="config.html">Config Registry</a><a href="decisions.html">Decisions</a><a href="inbox.html">Inbox</a><a href="about.html">About</a></nav><nav class="toc"><div class="toc-title">Contents</div><a class="lv2" href="#h-00-glossary-terms">Terms</a><a class="lv2" href="#s-gl-terms">Glossary</a><a class="lv2" href="#h-00-glossary-words-to-avoid">Words to avoid</a><a class="lv2" href="#s-gl-occurrences">Avoid-Term Occurrences</a></nav></aside>
+<main>
+<h1>Glossary</h1>
+<p class="lede page-lede">Canonical terms, their homes, and words to avoid</p>
+<p>Every term the wiki relies on has one canonical spelling, one definition and one home
+page. The first mention of a term on any page links here automatically.</p>
+<h2 id="h-00-glossary-terms">Terms</h2>
+<p class="lede section-lede">The vocabulary, one row per canonical term</p>
+<section class="gen"><h2 id="s-gl-terms">Glossary</h2><p class="lede">Canonical terms, definitions, scope, and words to avoid</p><p class="gen-note">3 canonical terms, alphabetical, parsed from <code>glossary.yaml</code>. “Avoid these” names words a writer might reach for instead of the term in that row; “see” names the OTHER entries this one is easily confused with.</p><table><thead><tr><th>term</th><th>definition</th><th>scope</th><th>avoid these</th><th>see</th></tr></thead><tbody><tr id="h-00-about-how-it-is-built"><td><code>lede</code></td><td>The six-to-eight word phrase that opens every page and every section.</td><td>wiki</td><td><code>tagline</code>, <code>subtitle</code></td><td></td></tr><tr id="h-00-example-how-a-diagram-gets-onto-a-page"><td><code>renderer</code></td><td>A function that returns one generated section&#x27;s HTML or SVG.</td><td>wiki</td><td></td><td></td></tr><tr id="s-ds-inks"><td><code>token</code></td><td>A named design value in <a class="gl" href="design-system.html#s-ds-inks">tokens</a>.yaml — an ink, a role, a size, a duration.</td><td>design</td><td><code>variable</code>, <code>constant</code></td><td></td></tr></tbody></table></section>
+<h2 id="h-00-glossary-words-to-avoid">Words to avoid</h2>
+<p class="lede section-lede">Where the old spellings still occur, reported</p>
+<p>This report is advisory: it lists every occurrence of a term the glossary asks you to
+avoid, so the corpus can be renamed deliberately. It never fails the build.</p>
+<section class="gen"><h2 id="s-gl-occurrences">Avoid-Term Occurrences</h2><p class="lede">Where ambiguous words still appear across the prose</p><p class="gen-note">REPORT-ONLY: these counts do not fail generation. 4 avoid-words from <code>glossary.yaml</code>, scanned case-insensitively and whole-word across 15 prose files, outside fenced and inline code -- 0 occurrences total. Tightening this into a build-failing gate is an adopter decision.</p><table><thead><tr><th>avoid word</th><th>occurrences</th><th>where</th></tr></thead><tbody><tr><td><code>constant</code></td><td>0</td><td>—</td></tr><tr><td><code>subtitle</code></td><td>0</td><td>—</td></tr><tr><td><code>tagline</code></td><td>0</td><td>—</td></tr><tr><td><code>variable</code></td><td>0</td><td>—</td></tr></tbody></table></section>
+</main>
+</div>
+</body>
+</html>

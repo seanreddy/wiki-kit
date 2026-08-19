@@ -1,0 +1,25 @@
+# reviewed title + lede per tracked page. OWNER-ONLY after init.
+design-system.html:
+  title: "Design System"
+  lede: "The token model, rendered live from one file"
+example.html:
+  title: "Example"
+  lede: "Every diagram idiom the wiki draws, once each"
+glossary.html:
+  title: "Glossary"
+  lede: "Canonical terms, their homes, and words to avoid"
+ideas.html:
+  title: "Ideas"
+  lede: "Unproven ideas, parked with a status tag"
+config.html:
+  title: "Config Registry"
+  lede: "Every tuning knob that matters, verified against source"
+decisions.html:
+  title: "Decisions"
+  lede: "Every recorded decision, rendered exactly as written"
+inbox.html:
+  title: "Inbox"
+  lede: "Definition changes and suggested fixes, gathered here"
+about.html:
+  title: "About"
+  lede: "How this wiki works, and when you act"

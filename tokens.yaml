@@ -1,0 +1,113 @@
+# =============================================================================
+# DESIGN TOKENS — the one hand-edited source the site is styled from
+# =============================================================================
+# The wiki is its own first specimen: every colour, size and radius on every page
+# reads from this file. Change a value, rebuild, and the whole site retints.
+# QUOTE EVERY HEX VALUE. `#F4F1EA` unquoted is a YAML comment.
+# YAML subset: nested block mappings, block sequences of scalars, flow sequences
+# [a, b, c], quoted and bare scalars. No anchors, no multi-line scalars.
+# =============================================================================
+
+meta:
+  version: 1
+
+# --- inks: the closed palette. Names describe the JOB, not the hue. ---------
+ink:
+  paper:      "#F4F1EA"   # page ground, card ground
+  ink:        "#1B1F23"   # type, contour
+  accent:     "#7A2E3B"   # headings, danger
+  muted:      "#5F6B73"   # secondary type, captions
+  tint:       "#E7E2D6"   # bands, generated-section ground
+  highlight:  "#B98A2F"   # rules, hub-card edge, active rail
+  positive:   "#1F7A63"   # links, commit actions
+  deep:       "#20303A"   # code blocks, dark ground
+
+# --- ramps: hand-picked stops. A ramp named after an ink must contain it. ---
+ramp:
+  accent:    ["#F3D9DD", "#D28C97", "#7A2E3B", "#4E1B25"]
+  positive:  ["#D5EEE6", "#6FBFA9", "#1F7A63", "#134D3E"]
+  neutral:   ["#F4F1EA", "#E7E2D6", "#B9B4A8", "#5F6B73", "#1B1F23"]
+
+# --- roles: every drawing colour goes through a role where one exists -------
+role:
+  text.primary:
+    ink: ink
+  text.reversed:
+    ink: paper
+  text.secondary:
+    ink: muted
+  surface.card:
+    ink: paper
+  surface.band:
+    ink: tint
+  contour.line:
+    ink: ink
+  action.commit:
+    ink: positive
+  action.danger:
+    ink: accent
+  state.locked:
+    ink: muted
+  ornament.rule:
+    ink: highlight
+  ground.deep:
+    ink: deep
+  scale.low:
+    ramp: neutral
+    stop: 1
+  scale.high:
+    ramp: neutral
+    stop: 3
+
+# --- states ------------------------------------------------------------------
+state:
+  disabled.fill: "#B9B4A8"
+  disabled.text: "#F4F1EA"
+  pressed.translate: 2
+  pressed.darken: -12
+  selected.offset: 3
+
+# --- type ---------------------------------------------------------------------
+type:
+  face.display: "Georgia"
+  face.body: "system-ui"
+  display:
+    size: 40
+    face: display
+  title:
+    size: 26
+    face: display
+  subtitle:
+    size: 19
+    face: display
+  body:
+    size: 16
+    face: body
+  label:
+    size: 14
+    face: body
+  micro:
+    size: 12
+    face: body
+
+spacing: [4, 8, 12, 16, 24, 32, 48]
+
+shape:
+  corner.card: 10
+  corner.chip: 999
+  corner.tile: 6
+  overlap.tab: -10
+  overlap.chip: -12
+
+ornament:
+  rule.thickness: 3
+  rule.inset: 0
+  hairline.thickness: 1
+  hairline.alpha: 24
+  bracket.arm: 16
+  bracket.thickness: 3
+
+motion:
+  quick: 90
+  standard: 180
+  enter: 240

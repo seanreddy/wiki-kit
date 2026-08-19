@@ -1,0 +1,8 @@
+# Which wiki pages a code change may falsify. domain dir -> path prefixes (relative
+# to the REPOSITORY root, not this directory). `build.py drift [RANGE]` diffs the
+# change set against these and names the prose to re-read. A living file: fix wrong
+# flags in the same change that exposes them.
+1-design-system:
+  - wiki/tokens.yaml
+9-about:
+  - wiki/engine/

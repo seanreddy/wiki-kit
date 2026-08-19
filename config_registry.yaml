@@ -1,0 +1,18 @@
+# Every knob that matters: name, where it lives, the symbol to grep for, scope,
+# how to change it, and its default (or `token: path` to read one live).
+# The build VERIFIES each `where`/`symbol` pair — a renamed knob fails generation.
+wiki:
+  lede_bounds:
+    name: "Lede word bounds"
+    where: "wiki.yaml"
+    symbol: "ledes:"
+    scope: "every page and section"
+    how: "edit ledes.min / ledes.max, rebuild"
+    default: "6-8"
+  hairline:
+    name: "Hairline alpha"
+    where: "tokens.yaml"
+    symbol: "hairline.alpha"
+    scope: "every rule and border"
+    how: "edit ornament.hairline.alpha, rebuild"
+    token: "ornament.hairline.alpha"

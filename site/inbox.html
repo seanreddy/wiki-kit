@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inbox</title>
+<link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+<div class="wrap">
+<aside class="side"><nav class="rail"><div class="rail-title">Wiki</div><a href="index.html">Hub</a><a href="design-system.html">Design System</a><a href="example.html">Example</a><a href="glossary.html">Glossary</a><a href="ideas.html">Ideas</a><a href="config.html">Config Registry</a><a href="decisions.html">Decisions</a><a href="inbox.html" aria-current="page">Inbox</a><a href="about.html">About</a></nav><nav class="toc"><div class="toc-title">Contents</div><a class="lv2" href="#i-flags">Definitions changed since last review</a><a class="lv2" href="#i-suggested">Suggested</a></nav></aside>
+<main>
+<nav class="crumbs"><a href="index.html">Hub</a> › <span>Inbox</span></nav><h1>Inbox</h1>
+<p class="lede page-lede">Definition changes and suggested fixes, gathered here</p>
+<p>This page carries two kinds of note. The first is mechanical: every domain page and every page provider's index page has a reviewed title and <a class="gl" href="about.html#h-00-about-how-it-is-built">lede</a> snapshot in <code>review_state.yaml</code>, and a page whose current title or lede no longer matches its snapshot is flagged below automatically at generation time, with the same banner shown on the page itself. The second is editorial: action items in <code>inbox.yaml</code>, added as <code>suggested</code> and moved to <code>accepted</code> or <code>dismissed</code> only by the owner.</p>
+<h2 id="i-flags">Definitions changed since last review</h2>
+<p class="gen-note">Every tracked page matches its <code>review_state.yaml</code> snapshot -- nothing to re-review.</p>
+<h2 id="i-suggested">Suggested</h2>
+<div class="spec-grid"><div class="spec" id="inbox-welcome"><b>Read the About page, then delete the Example domain</b><p>The Example page exists to show the diagram repertoire; remove prose/2-example, packs/example_pack.py and tests/test_example_pack.py once you have copied what you need.</p><div class="gen-note">Source: <code>kit</code></div></div></div>
+</main>
+</div>
+</body>
+</html>

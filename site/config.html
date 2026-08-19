@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Config Registry</title>
+<link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+<div class="wrap">
+<aside class="side"><nav class="rail"><div class="rail-title">Wiki</div><a href="index.html">Hub</a><a href="design-system.html">Design System</a><a href="example.html">Example</a><a href="glossary.html">Glossary</a><a href="ideas.html">Ideas</a><a href="config.html" aria-current="page">Config Registry</a><a href="decisions.html">Decisions</a><a href="inbox.html">Inbox</a><a href="about.html">About</a></nav><nav class="toc"><div class="toc-title">Contents</div><a class="lv2" href="#cfg-wiki">Wiki — 2</a><a class="lv2" href="#cfg-adding">Adding an entry</a><a class="lv2" href="#cfg-sources">How this page is built</a></nav></aside>
+<main>
+<h1>Config Registry</h1>
+<p class="lede page-lede">Every tuning knob that matters, verified against source</p>
+<p>Every toggle and variable in this project worth knowing about lives in exactly one file: a constant a programmer edits in source, or a value in <code>tokens.yaml</code>. This page is neither of those — it is a generated INDEX pointing at both, and unlike a page someone writes by hand, it is <strong>verified</strong> at generation time: every entry's file must exist and a literal symbol must appear in it, so a renamed or deleted knob fails the build instead of quietly going stale here.</p>
+<p>This page has no edit control and no write path. The <strong>How to change</strong> column names the file to open and, typically, the test suite to run after — changing a knob still means editing that file by hand. This page is the evidence a debug panel would eventually need, not the panel itself.</p>
+<p class="gen-note">2 knobs across 1 areas (1 resolved live from <code>tokens.yaml</code>, 1 hand-curated defaults). Every entry below survived generation, which means its file exists and its symbol was found there today.</p>
+<h2 id="cfg-wiki">Wiki — 2</h2><table><thead><tr><th>Name</th><th>Default</th><th>Scope</th><th>Where</th><th>How to change</th></tr></thead><tbody><tr><td><a class="gl" href="about.html#h-00-about-how-it-is-built">Lede</a> word bounds</td><td>6-8</td><td>every page and section</td><td><code>wiki.yaml:ledes:</code></td><td>edit ledes.min / ledes.max, rebuild</td></tr><tr><td>Hairline alpha</td><td><code>24</code></td><td>every rule and border</td><td><code>tokens.yaml:hairline.alpha</code></td><td>edit ornament.hairline.alpha, rebuild</td></tr></tbody></table>
+<h2 id="cfg-adding">Adding an entry</h2>
+<p>Add a key under the right area in <code>config_registry.yaml</code> — or a new top-level area, if none of the existing ones fit. Every entry needs <code>name</code>, <code>where</code>, <code>symbol</code>, <code>scope</code>, <code>how</code>, and exactly one of <code>default</code> (prose you write) or <code>token</code> (a dotted <code>tokens.yaml</code> path resolved live). Pick <code>token</code> whenever the value truly lives in <code>tokens.yaml</code> — it cannot go stale the way a hand-typed <code>default</code> can.</p>
+<p>Regenerate after editing. If <code>symbol</code> does not appear verbatim in <code>where</code>, or <code>where</code> does not exist, generation fails naming the entry — fix the pointer, not the check. The manifest file's own header documents the minimal YAML subset it must stay inside (no anchors, no multi-line scalars, and <code>&amp; * &gt; |</code> are rejected even inside quotes).</p>
+<h2 id="cfg-sources">How this page is built</h2>
+<p class="gen-note">Generated from <code>config_registry.yaml</code> by this pack. Prose values are exactly what a curator typed; <a class="gl" href="design-system.html#s-ds-inks">token</a> values are read live from <code>tokens.yaml</code> through the same resolver every <code>{{token}}</code> on this site uses. Edit the manifest, not this page — this page is output.</p>
+</main>
+</div>
+</body>
+</html>

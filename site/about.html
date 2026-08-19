@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About</title>
+<link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+<div class="wrap">
+<aside class="side"><nav class="rail"><div class="rail-title">Wiki</div><a href="index.html">Hub</a><a href="design-system.html">Design System</a><a href="example.html">Example</a><a href="glossary.html">Glossary</a><a href="ideas.html">Ideas</a><a href="config.html">Config Registry</a><a href="decisions.html">Decisions</a><a href="inbox.html">Inbox</a><a href="about.html" aria-current="page">About</a></nav><nav class="toc"><div class="toc-title">Contents</div><a class="lv2" href="#h-00-about-when-you-are-needed">When you are needed</a><a class="lv2" href="#h-00-about-how-it-is-built">How it is built</a><a class="lv2" href="#h-00-about-what-maintains-itself">What maintains itself</a><a class="lv2" href="#h-00-about-the-rules-of-the-page">The rules of the page</a><a class="lv2" href="#h-00-about-where-it-grows-next">Where it grows next</a></nav></aside>
+<main>
+<h1>About</h1>
+<p class="lede page-lede">How this wiki works, and when you act</p>
+<p>Every page here is generated. That is not a production detail — it is the reason this
+site can be trusted: a hand-written wiki goes stale within a day; this one is built so
+that going stale is a <strong>failing build</strong>, not a quiet rot. The machinery keeps the
+<em>derived</em> half true on its own. The <em>narrative</em> half — why a decision was made, what a
+system is for, what should happen next — is yours.</p>
+<h2 id="h-00-about-when-you-are-needed">When you are needed</h2>
+<p class="lede section-lede">Six moments that need a person</p>
+<p>- <strong>Rationale changes.</strong> Edit the prose under <code>prose/</code>, rebuild, commit both together.
+- <strong>A definition changes.</strong> Retitle a page or rewrite its lede and the site flags it
+  for re-review until you clear it in <code>review_state.yaml</code>; flags collect on the
+  <a href="inbox.html">inbox</a>.
+- <strong>Action items arrive.</strong> Suggested items land on the inbox; only you promote or
+  dismiss them, in <code>inbox.yaml</code>.
+- <strong>An idea strikes.</strong> Park it on the <a href="ideas.html">ideas</a> page with a status tag.
+- <strong>A word turns ambiguous.</strong> Rule on it in <code>glossary.yaml</code>; the
+  <a href="glossary.html">glossary</a> reports where the old usage lives.
+- <strong>A decision is made.</strong> Record it under <code>decisions/</code>; the
+  <a href="decisions.html">decisions</a> page renders it exactly as written, forever.</p>
+<h2 id="h-00-about-how-it-is-built">How it is built</h2>
+<p class="lede section-lede">Three hand-edited inputs, one generator, one site</p>
+<p>Three kinds of hand-edited input exist, and only three: <code>tokens.yaml</code> (the design
+values), <code>prose/</code> (these words — one directory per page, plain markdown), and
+committed source and asset files that section packs read where they live. One
+command turns those into this site: <code>python3 wiki/engine/build.py</code>.</p>
+<h2 id="h-00-about-what-maintains-itself">What maintains itself</h2>
+<p class="lede section-lede">Every table and diagram is derived</p>
+<p>Every table, swatch, diagram and index is derived at build time. Change a source
+without rebuilding and <code>build.py --check</code> turns red. Prose cannot smuggle stale
+values either: it names <a class="gl" href="design-system.html#s-ds-inks">tokens</a> by <code>{{ink.accent}}</code>-style interpolation and the
+generator resolves them. An unknown name, a dead internal link, a missing cited
+image, a lede of the wrong length or an unplaced section fails the build loudly.</p>
+<h2 id="h-00-about-the-rules-of-the-page">The rules of the page</h2>
+<p class="lede section-lede">Rules-book voice, ledes, diagrams before paragraphs</p>
+<p>Pages read like a rules book: present tense, most-important-first, short titles.
+Every page and every section opens with a six-to-eight word lede. A drawn mechanism
+or a compact table beats paragraphs. Tickets, class names and history live in
+collapsed engineering notes, one click away. The full rulebook is <code>WIKI.md</code> beside
+this wiki&#x27;s inputs.</p>
+<h2 id="h-00-about-where-it-grows-next">Where it grows next</h2>
+<p class="lede section-lede">One directory per page, packs for diagrams</p>
+<p>A new page is a new <code>prose/&lt;nn&gt;-&lt;slug&gt;/</code> directory; a diagram is a <a class="gl" href="example.html#h-00-example-how-a-diagram-gets-onto-a-page">renderer</a> in a
+pack registered in <code>packs/registry.py</code>; a test file beside it copies the idiom in
+<code>tests/test_example_pack.py</code>. The <a href="example.html">example</a> page is the pattern
+library — copy from it, then delete it.</p>
+</main>
+</div>
+</body>
+</html>
